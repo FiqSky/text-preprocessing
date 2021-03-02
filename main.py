@@ -1,5 +1,6 @@
 import string
 import nltk
+import xlsxwriter
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -12,7 +13,19 @@ def tokenize():
     sentence = input()
 
     tokens = nltk.tokenize.word_tokenize(sentence)
-    print(tokens)
+    # print(tokens)
+
+    workbook = xlsxwriter.Workbook('arrays.xlsx')
+    worksheet = workbook.add_worksheet()
+
+    array = [tokens]
+
+    row = 0
+
+    for col, data in enumerate(array):
+        worksheet.write_column(row, col, data)
+
+    workbook.close()
 
 
 def stop_word():
@@ -29,7 +42,19 @@ def stop_word():
         if t not in list_stop_word:
             removed.append(t)
 
-    print(removed)
+    # print(removed)
+
+    workbook = xlsxwriter.Workbook('arrays.xlsx')
+    worksheet = workbook.add_worksheet()
+
+    array = [removed]
+
+    row = 0
+
+    for col, data in enumerate(array):
+        worksheet.write_column(row, col, data)
+
+    workbook.close()
 
 
 def stemming():
