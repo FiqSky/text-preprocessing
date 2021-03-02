@@ -1,7 +1,7 @@
 # Text Preprocessing with Python
 
 > Dengan beberapa fitur didalamnya seperti tokenizing, stop word, dan stemming. 
-> Dalam project ini menggunakan library dari 'nltk' dan 'Sastrawi'
+> Dalam project ini menggunakan library dari 'nltk', 'Sastrawi', dan 'xlsxwriter'
 
 ## NLTK
 > Natural Language Toolkit, atau lebih umum NLTK, adalah serangkaian perpustakaan dan program untuk pemrosesan bahasa alami simbolik dan statistik untuk bahasa Inggris yang ditulis dalam bahasa pemrograman Python.
