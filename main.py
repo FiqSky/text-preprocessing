@@ -6,6 +6,7 @@ import collections
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from xlsxwriter import Workbook
 
 
 def tokenize():
@@ -70,19 +71,20 @@ def stemming():
 
 
 def count_word():
+    global word
     print("Enter a sentence")
     sentences = input()
 
     li = sentences.split(' ')
     get = collections.Counter(li).most_common()
 
-    for kata in get:
-        print("%s\t: %d" % (kata[0], kata[1]))
+    for word in get:
+        print("%s\t: %d" % (word[0], word[1]))
 
-    workbook = xlsxwriter.Workbook('arrays.xlsx')
+    workbook: Workbook = xlsxwriter.Workbook('arrays.xlsx')
     worksheet = workbook.add_worksheet()
 
-    array = ["%s\t: %d" % (kata[0], kata[1])]
+    array = ["%s\t: %d" % (word[0], word[1])]
 
     row = 0
 
