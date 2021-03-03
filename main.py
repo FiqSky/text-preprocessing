@@ -1,6 +1,7 @@
 import string
 import nltk
 import xlsxwriter
+import collections
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -68,9 +69,33 @@ def stemming():
     print(sentence)
 
 
+def count_word():
+    print("Enter a sentence")
+    sentences = input()
+
+    li = sentences.split(' ')
+    get = collections.Counter(li).most_common()
+
+    for kata in get:
+        print("%s\t: %d" % (kata[0], kata[1]))
+
+    workbook = xlsxwriter.Workbook('arrays.xlsx')
+    worksheet = workbook.add_worksheet()
+
+    array = ["%s\t: %d" % (kata[0], kata[1])]
+
+    row = 0
+
+    for col, data in enumerate(array):
+        worksheet.write_column(row, col, data)
+
+    workbook.close()
+
+
 print("1 for tokenizing\n"
       "2 for stop word\n"
-      "3 for stemming")
+      "3 for stemming\n"
+      "4 for count word")
 print("Choose number:")
 number = input()
 if number == "1":
@@ -79,5 +104,7 @@ elif number == "2":
     stop_word()
 elif number == "3":
     stemming()
+elif number == "4":
+    count_word()
 else:
     print("NOPE")
