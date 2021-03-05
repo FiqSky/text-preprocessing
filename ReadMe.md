@@ -9,6 +9,9 @@
 ## SASTRAWI
 > Sastrawi Python adalah library python sederhana yang memungkinkan Anda untuk mengurangi kata-kata infleksi dalam Bahasa Indonesia (Bahasa Indonesia) menjadi bentuk dasarnya (batang)
 >
+
+## XlsxWriter
+> XlsxWriter adalah library python yang dapat digunakan untuk menulis text, angka, rumus dan hiperlink di beberapa worksheets, dan masih banyak lagi fitur nya
  
 >Tambahan:
 > https://arraythis.com/
